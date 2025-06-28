@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subway Cookies</title>
+    <link rel="stylesheet" href="../../css/orbit.css">
+    <link rel="stylesheet" href="recipe.css">
+  </head>
+  <body >
+    <nav class="top has-text-white" style="background-color: #AF3E3E;">
+  <div class="container">
+    <div class="top__brand">
+      <h2>Jan-Erik's Subway Cookies</h2>
+    </div>
+    <div class="top__links is-end">
+    <ul>
+      <li><a href="#">home</a></li>
+      <li><a href="#">about me</a></li>
+      <li><a href="#">contact</a></li>
+    </ul>
+  </div>
+
+  </div>
+</nav>
+  <main>
+      <section class="section">
+          <div class="container" style="display: flex;
+              justify-content: center;align-items: center;">
+
+          <label for="veganToggle" style="padding-right: 8px;">vegan</label>
+          <div class="is-switch is-rounded" >
+            <input type="checkbox" id="veganToggle">
+            <label for="veganToggle"></label>
+          </div>
+              </div>
+          <h1>Zutatenliste</h1>
+            <div class="container" style="display: flex;
+                justify-content: center;align-items: center;">
+
+
+
+
+
+                    <table>
+                    <caption>(für 4 Kekse)<br><p></p></caption>
+                    <thead>
+                      <tr>
+                        <th>Menge</th>
+                        <th>Zutat</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr">
+                          <td>1 Pckg</td>
+                          <td>Schoko-Chunks</td>
+                        </tr>
+                      <tr class="nonvegan">
+                        <td>1</td>
+                        <td>Ei</td>
+                      </tr>
+                      <tr class="onlyvegan" style="display: none;">
+                        <td>30ml</td>
+                        <td>Pflanzenmilch</td>
+                      </tr>
+                      <tr>
+                        <td>100g</td>
+                        <td>Xylit</td>
+                      </tr>
+                      <tr>
+                        <td>80g</td>
+                        <td>Magerine</td>
+                      </tr>
+                      <tr>
+                        <td>80g</td>
+                        <td>Mehl</td>
+                      </tr>
+                      <tr>
+                        <td>20g</td>
+                        <td>Kakao</td>
+                      </tr>
+                      <tr>
+                        <td>50g</td>
+                        <td>gemahlene Mandeln</td>
+                      </tr>
+                      <tr>
+                        <td>1 Pr.</td>
+                        <td>Salz</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <p> </p>
+                </div>
+<div class="container" >
+          <h1>Zubereitung</h1>
+          <h3>Vorbereitung</h3>
+          <ul>
+              <li>Schoko-Chunks in die Tiefkühltruhe</li>
+              <li>Restliche Zutaten vermixen</li>
+              <li>Teig dann <b>1 Stunde</b> in den Kühlschrank </li>
+          </ul>
+          <h3>Backen</h3>
+          <ul>
+              <li><b>190°C</b> Umluft oder etwas mehr Ober/Unterhitze</li>
+              <li>Schokochunks in den Teig mixen</li>
+              <li>Teig mit dem Löffel in Keks-Form auf das Backblech drücken</li>
+              <li><b>10 min</b> backen. Nicht (viel) mehr! Auch wenn sie noch aussehen, als könnten sie noch.</li>
+          </ul>
+          <h3>Abkühlen lassen</h3>
+          <p>Für so 20 Minuten. Oder länger... aber das schaff ich meist net.</p>
+
+<p></p>
+
+
+<h1>Tips</h1>
+<ul>
+    <li>Nutze schwarze und weiße Schoko-Chunks gemischt</li>
+    <li>Hacke Schokolade / Kuvert&uuml;re, wenn du keine Chunks hast/findest</li>
+<h1>Quellen</h1>
+<p>Stark inspiriert von: <a href="https://www.subway.com/de-de/food/cookies">Futterfight: Vegane Subway Cookies</a></p>
+</ul>
+            </div>
+
+      </section>
+
+
+  </main>
+
+  <script>
+    const checkbox = document.getElementById('veganToggle');
+
+    checkbox.addEventListener('change', function () {
+      const nonVeganRows = document.querySelectorAll('tr.nonvegan');
+      const veganRows = document.querySelectorAll('tr.onlyvegan');
+
+      if (checkbox.checked) {
+        nonVeganRows.forEach(row => row.style.display = 'none');
+        veganRows.forEach(row => row.style.display = '');
+      } else {
+        nonVeganRows.forEach(row => row.style.display = '');
+        veganRows.forEach(row => row.style.display = 'none');
+      }
+    });
+  </script>
+</html>

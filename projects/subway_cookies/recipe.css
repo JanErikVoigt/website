@@ -1,0 +1,43 @@
+body {
+    background-color: #da6c6c;
+    color: #eaebd0;
+}
+
+h1,
+h3 {
+    text-align: center;
+}
+
+h1 {
+    --font-size: 2.2rem;
+}
+
+h3 {
+    --font-size: 1.5rem;
+}
+
+p {
+    text-align: justify;
+}
+
+td:first-child,
+th:first-child {
+    text-align: right;
+    padding-right: 8px;
+}
+
+td:last-child,
+th:last-child {
+    text-align: left;
+    padding-left: 8px;
+}
+
+b {
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+a {
+    text-decoration: underline;
+    color: #7b3d3dff;
+}
