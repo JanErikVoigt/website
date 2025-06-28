@@ -1,0 +1,39 @@
+
+/* font */
+@font-face {
+  font-family: rubik;
+  src: url(../font/Rubik-VariableFont_wght.ttf);
+}
+
+html *
+{
+	font-family: rubik !important;
+	font-weight: 350;
+}
+
+
+.welcome-section {
+	text-align: center;
+	align-content: center;
+	height: 80vh;
+}
+
+.welcome-section-footer {
+	height: 20vh;
+}
+
+
+.welcome-image {
+    background-image: url("../index-assets/thomas-grams-UXIwAUKqj7A-unsplash.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #444;
+}
+
+
+.social-icon {
+	width: 1.2rem;
+	height: 1.2rem;
+}

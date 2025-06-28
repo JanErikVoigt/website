@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>janerikvoigt.de</title>
+
+    <meta name="description" content="My Website">
+    <meta name="author" content="Jan-Erik Voigt">
+
+    <link rel="icon" href="../content/icon1.png">
+    <!--<link rel="stylesheet" href="mybulma/css/mystyles.css">-->
+    <link rel="stylesheet" href="../../css/mystyles.css">
+    <link rel="stylesheet" href="../../css/images.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">-->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+
+
+    <!-- syntax highlighting:-->
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+  </head>
+  <body>
+
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <p class="title">
+          janerikvoigt.de
+        </p>
+        <p class="subtitle">
+          Projects
+        </p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+          
+        <h1 class="title">
+          Magnetic Disk Visualization
+        </h1>
+        <p class="subtitle">
+          an explanation of basic concepts of magnetic disks</p>
+        <div class="content">
+            <!--<p> Hugely inspired by <a href="https://www.youtube.com/c/SebastianLague">Sebastian Lague</a>, you should definitely check him out! More precisely: <a href="https://www.youtube.com/watch?v=bqtqltqcQhw">this video</a>, where it is only mentioned as a sidenote... --> 
+         <!--<ul>
+            <li> a good introduction: <a href="http://web.mit.edu/alexmv/Public/6.850-lectures/lecture09.pdf">MIT</a>,</li>
+            <li> the obvious choice: <a href="https://en.wikipedia.org/wiki/Delaunay_triangulation#Incremental">Wikipedia</a></li>
+        </ul>-->
+
+        
+          </div>
+          
+        <!--<div class="content has-text-centered">
+            <a class="button is-primary is-outlined" href="https://editor.p5js.org/janerikvoigt/full/dg1XPdg1d">Go Fullscreen</a>
+        </div>  -->
+
+    </div>
+    </section>
+
+    <section class="section">
+      <div class="columns">
+        <div class="column is-three-fifths is-offset-one-fifth">
+          <div class="container">
+                                <!--<p>Before canvas.</p>-->
+                                <canvas ></canvas>
+                                <!--<p>After canvas.</p>-->
+                                <script>
+                                let canvas = document.querySelector("canvas");
+                                let context = canvas.getContext("2d");
+
+                                const bg_col = "#EFF0EB";
+                                const hdd_col = "#FFD460";//"#F8CB2E";
+                                const hdd_edge = "#222222";//"#112B3C";
+                                const sector_col = "#F07B3F";
+                                const arm_col = "#0D7377";//"#2D4059";
+
+                                const danger_col = "#EA5455"; //not used yet
+                                const dark_blue_col = "#2D4059"; //not yet used
+
+                                
+                                const radius = 100;
+
+                                const animation_speed = 0.1;
+
+                                let currentRotPlate = 145 * Math.PI / 180;
+
+                                //context.save();
+
+                            function draw() {
+                                context.resetTransform();
+                                let centerX = canvas.width / 2;
+                                let centerY = canvas.height / 2;
+
+                                context.fillStyle = "#00FF00";//bg_col;
+                                context.fillRect(0, 0, canvas.width, canvas.height);
+
+                                //draw rotating plate
+                                context.beginPath();
+                                context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+                                context.fillStyle = hdd_col;
+                                context.fill();
+                                context.lineWidth = 1.5;
+                                context.strokeStyle = hdd_edge;
+                                context.stroke();
+
+                                //draw center
+                                context.beginPath();
+                                context.arc(centerX, centerY, 6, 0, 2 * Math.PI, true);
+                                context.stroke();
+
+                                //draw rotation arrow
+                                let arrowHeadPosX = Math.cos(1.4 * Math.PI) * 114 + centerX;
+                                let arrowHeadPosY = Math.sin(1.4 * Math.PI) * 114 + centerY;
+                                
+                                context.beginPath();
+                                context.arc(centerX, centerY, 114, 1.4 * Math.PI, 1.2 * Math.PI , true);
+                                context.moveTo(arrowHeadPosX, arrowHeadPosY);
+                                context.lineTo(Math.cos(1.38 * Math.PI) * 116 + centerX, Math.sin(1.38 * Math.PI) * 116 + centerY);
+                                context.moveTo(arrowHeadPosX, arrowHeadPosY);
+                                context.lineTo(Math.cos(1.38 * Math.PI) * 112 + centerX, Math.sin(1.38 * Math.PI) * 112 + centerY);
+                                //context.line
+                                //canvas.moveTo(x, y);
+                                //canvas.lineTo(x+1, y+1);
+                                context.stroke();
+
+
+                                //context.save();
+
+                                
+                                context.resetTransform();
+                                // move the origin to the canvas' center
+                                context.translate(centerX, centerY);
+                                // add 45 degrees rotation
+                                context.rotate(currentRotPlate);
+
+
+                                //draw sector
+                                context.beginPath();
+                                context.arc(0, 0, 80, 0.1 * Math.PI, 0.8 * Math.PI, false);
+                                //context.arc(centerX, centerY, 60, 0.1 * Math.PI, 0.8 * Math.PI,  false);
+                                
+                                //context.fillStyle = sector_col;
+                                //context.fill();
+                                context.lineWidth = 5.5;
+                                context.strokeStyle = sector_col;
+                                context.stroke();
+
+                                context.resetTransform();//context.restore(); //undo translate & rotate
+                                context.translate(400,260);
+                                context.fillRect(400,260,10,10);
+                                
+                                context.beginPath();
+                                //context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+                                context.moveTo(-10,0);
+                                context.lineTo(-10,-90);
+                                context.lineTo(-40,-130);
+                                context.lineTo(-34,-135);
+                                context.lineTo(0,-95);
+                                context.lineTo(10,0);
+                                context.moveTo(-10,0);
+                                context.arc(0, 0, 10, 1 * Math.PI,2 * Math.PI, true);
+
+                                context.fillStyle = arm_col;
+                                context.fill();
+                                context.lineWidth = 1.5;
+                                context.strokeStyle = hdd_edge;
+                                context.stroke();
+
+
+                                context.resetTransform();
+                            }
+                                
+                            function loop() {
+                                currentRotPlate += animation_speed * 5 * Math.PI / 180;
+                                draw();
+                                requestAnimationFrame(loop);
+                            }
+
+                            // resize the canvas to fill browser window dynamically
+                            window.addEventListener('resize', resizeCanvas, false);
+                                    
+                            function resizeCanvas() {
+                                //canvas.width = "100%";//window.innerWidth;
+                                //canvas.height = "100%";//window.innerHeight;
+                                canvas.style.width ='100%';
+                                //canvas.style.height='100%';
+                                // ...then set the internal size to match
+                                canvas.width  = canvas.offsetWidth;
+                                canvas.height = canvas.width * 2 / 3; //canvas.offsetHeight;
+                                //todo scale contents!
+                                console.log(canvas.width, canvas.height);
+                                /**
+                                 * Your drawings need to be inside this function otherwise they will be reset when 
+                                 * you resize the browser window and the canvas goes will be cleared.
+                                 */
+                                draw(); 
+                            }
+                            
+                            resizeCanvas();
+
+                            requestAnimationFrame(loop);
+
+                                </script>
+            <!--<figure class="image is-16by9 is-centered  has-text-centered">
+              <iframe class="has-ratio" width="900" height="900" frameborder="0" allowfullscreen src="https://editor.p5js.org/janerikvoigt/full/dg1XPdg1d"></iframe>
+            </figure>-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--<section class="section">
+        <div class="container">
+            <div class="content">
+            <h2>The Code</h2>
+            <p>The majority of the sourcecode is not that interesting. You can find the 'essence' of this project in the function below.</p> 
+            <p>One interesting thing you might notice is the pow-function around the distance-calculation. You can actually tweak this parameter in the demo. You might notice power=1 (which is the same as leaving the pow-function out) results in a very dense spiral in the middle. If you instead choose 0.5 (which makes it a square-root), the points are very nicely spread out. This is also an idea I got from Sebastian Lague.</p>
+
+                <div class="highlight">
+                    <pre><code>function generateFibonacciVertices(num_points, power = 0.5) {
+    let verts = []
+    var turn_fraction = 1.6180339 // golden ratio
+
+    for(let i = 0; i < num_points;i++) {
+        var distance = pow(i / (num_points - 1.0), power)
+        var angle = 2 * PI * turn_fraction * i
+            
+        var x = distance * cos(angle)
+        var y = distance * sin(angle)
+        
+        verts[i] = createVector(x,y)
+    }
+    return verts
+}</code></pre></div>
+            </div>
+        </div>
+
+    </section>-->
+
+
+    
+
+
+</body>
+</html>

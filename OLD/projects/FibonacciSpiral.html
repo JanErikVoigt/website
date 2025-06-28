@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>janerikvoigt.de</title>
+
+    <meta name="description" content="My Website">
+    <meta name="author" content="Jan-Erik Voigt">
+
+    <link rel="icon" href="content/icon1.png">
+    <!--<link rel="stylesheet" href="mybulma/css/mystyles.css">-->
+    <link rel="stylesheet" href="../css/mystyles.css">
+    <link rel="stylesheet" href="../css/images.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">-->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+
+
+    <!-- syntax highlighting:-->
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+  </head>
+  <body>
+
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <p class="title">
+          janerikvoigt.de
+        </p>
+        <p class="subtitle">
+          Projects
+        </p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+          
+        <h1 class="title">
+          Fibonacci Spirals
+        </h1>
+        <p class="subtitle">
+          the golden ratio is everywhere</p>
+        <div class="content">
+            <p> Hugely inspired by <a href="https://www.youtube.com/c/SebastianLague">Sebastian Lague</a>, you should definitely check him out! More precisely: <a href="https://www.youtube.com/watch?v=bqtqltqcQhw">this video</a>, where it is only mentioned as a sidenote...  
+         <!--<ul>
+            <li> a good introduction: <a href="http://web.mit.edu/alexmv/Public/6.850-lectures/lecture09.pdf">MIT</a>,</li>
+            <li> the obvious choice: <a href="https://en.wikipedia.org/wiki/Delaunay_triangulation#Incremental">Wikipedia</a></li>
+        </ul>-->
+
+        
+          </div>
+          
+            <div class="content has-text-centered">
+                <a class="button is-primary is-outlined" href="https://editor.p5js.org/janerikvoigt/full/dg1XPdg1d">Go Fullscreen</a>
+            </div>  
+
+    </div>
+    </section>
+
+    <section class="section">
+      <div class="columns">
+        <div class="column is-three-fifths is-offset-one-fifth">
+          <div class="container">
+            <figure class="image is-16by9 is-centered  has-text-centered">
+              <iframe class="has-ratio" width="900" height="900" frameborder="0" allowfullscreen src="https://editor.p5js.org/janerikvoigt/full/dg1XPdg1d"></iframe>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="content">
+            <h2>The Code</h2>
+            <p>The majority of the sourcecode is not that interesting. You can find the 'essence' of this project in the function below.</p> 
+            <p>One interesting thing you might notice is the pow-function around the distance-calculation. You can actually tweak this parameter in the demo. You might notice power=1 (which is the same as leaving the pow-function out) results in a very dense spiral in the middle. If you instead choose 0.5 (which makes it a square-root), the points are very nicely spread out. This is also an idea I got from Sebastian Lague.</p>
+
+                <div class="highlight">
+                    <pre><code>function generateFibonacciVertices(num_points, power = 0.5) {
+    let verts = []
+    var turn_fraction = 1.6180339 // golden ratio
+
+    for(let i = 0; i < num_points;i++) {
+        var distance = pow(i / (num_points - 1.0), power)
+        var angle = 2 * PI * turn_fraction * i
+            
+        var x = distance * cos(angle)
+        var y = distance * sin(angle)
+        
+        verts[i] = createVector(x,y)
+    }
+    return verts
+}</code></pre></div>
+            </div>
+        </div>
+
+    </section>
+
+
+    
+
+
+</body>
+</html>

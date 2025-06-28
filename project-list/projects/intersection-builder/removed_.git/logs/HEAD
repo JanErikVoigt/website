@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 eef7bf10cb34e7b70f3bc086eef92f513d5973de Jan-Erik Voigt <mail@janerikvoigt.de> 1730411121 +0100	commit (initial): initial commit
+eef7bf10cb34e7b70f3bc086eef92f513d5973de 5cdc98983499e08724688cbc29cf853295e30818 Jan-Erik Voigt <mail@janerikvoigt.de> 1730842740 +0100	commit: start adding controlpoint for arc radius control
+5cdc98983499e08724688cbc29cf853295e30818 e1caae7270cfb299c40136387321a638cc072a85 Jan-Erik Voigt <mail@janerikvoigt.de> 1730845345 +0100	commit: working drag radius; now remove underlying lines!
+e1caae7270cfb299c40136387321a638cc072a85 dc996341af87a62aa35e60bdb88d988c44798168 Jan-Erik Voigt <mail@janerikvoigt.de> 1730845839 +0100	commit: minor fix (?)
+dc996341af87a62aa35e60bdb88d988c44798168 a64d4dd32f25f4a302dfdbde5bc3111f0199cdd6 Jan-Erik Voigt <mail@janerikvoigt.de> 1730847489 +0100	commit: pretty good state, but not quite done! alsmost though
+a64d4dd32f25f4a302dfdbde5bc3111f0199cdd6 3e927bfaae06a651f7f8aa2680fa342bb1912237 Jan-Erik Voigt <mail@janerikvoigt.de> 1730847751 +0100	commit: new approach to fix - didnt work

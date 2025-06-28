@@ -1,0 +1,25 @@
+.bg-image {
+    background-image: url("./lukas-s-jetKd31iViQ-unsplash.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #444;
+}
+
+.luebeck {
+    background-image: url("./lukas-s-jetKd31iViQ-unsplash.jpg");
+}
+
+.karlsruhe {
+    background-image: url("./enzo-lo-presti-mKtRlysoims-unsplash-cropped.jpg");
+}
+
+.kaunas {
+    background-image: url("./aliaksei-lepik-lgi5IhnQ-Bk-unsplash.jpg");
+}
+
+.kiel {
+    background-image: url("./thomas-grams-UXIwAUKqj7A-unsplash.jpg");
+}
+
