@@ -1,0 +1,12 @@
+
+
+
+
+.project-card {
+	background-color: #676e74;
+}
+
+.projects-list {
+	display: flex;
+	flex-wrap: wrap;
+}
