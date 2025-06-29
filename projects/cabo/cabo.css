@@ -1,0 +1,56 @@
+body {
+    background-color: #97b067;
+    color: #e7e380;
+}
+
+h1,
+h4,
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+h1 {
+    --font-size: 2.2rem;
+}
+
+h3 {
+    --font-size: 1.5rem;
+}
+
+p {
+    text-align: justify;
+}
+
+b {
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+a {
+    text-decoration: underline;
+    color: #7b3d3dff;
+}
+
+b.parheading {
+    font-size: 1.2rem;
+}
+
+h1.cabotitle {
+    --font-size: 5rem;
+    text-shadow:
+        -2px -2px 0 #e3de61,
+        2px -2px 0 #e3de61,
+        -2px 2px 0 #e3de61,
+        2px 2px 0 #e3de61;
+}
+
+h4.cabosubtitle {
+    font-size: 0.8rem;
+    color: #e7e380;
+    font-weight: bold;
+    margin-top: -1.6rem;
+}
