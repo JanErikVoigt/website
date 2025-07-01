@@ -3,13 +3,55 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Traffic Snakes | janerikvoigt.de</title>
+    <link rel="stylesheet" href="../../css/orbit.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <main>
-    </main>
-    <script src="sketch.js"></script>
-  </body>
+    <nav class="top has-bg-secondary has-text-white">
+  <div class="container">
+    <div class="top__brand">
+      <h2>Project: Traffic Snakes</h2>
+    </div>
+    <div class="top__links is-end">
+    <ul>
+        <li><a href="https://janerikvoigt.de">home</a></li>
+        <li><a href="https://janerikvoigt.de/about-me.html">about me</a></li>
+        <li><a href="https://janerikvoigt.de/projects/index.html">projects</a></li>
+    </ul>
+  </div>
+  </div>
+</nav>
+  <main>
+    <section class="section" style="z-index: 1;">
+        <div class="container">
+            <div id="canvas_container" style="width: 800px; height: 400px;"></div>
+
+
+
+        </div>
+        <div class="container" style="margin-top: 1rem;">
+            <p><button id="addlane" onclick="addLane()">Add Lane</button>
+            <button id="removelane" onclick="removeLane()">Remove Lane</button>
+            </p>
+            <p>
+                <input type="range" min="0" max="4" step="0.1" value="0.1" class="slider input inputslider" id="mincd">
+                <input type="range" min="0" max="4" step="0.1" value="2.0" class="slider input inputslider" id="maxcd">
+                 spawn a car every <span id="mincd_value"></span> to <span id="maxcd_value"></span> seconds
+            </p>
+            <p>
+                <input type="range" min="10" max="100" step="10" value="60" class="slider input inputslider" id="minspeed">
+                <input type="range" min="10" max="200" step="10" value="100" class="slider input inputslider" id="expectedspeed">
+                    speed: <span id="minspeed_value" style="width: 100px;">aa</span> to <span id="maxspeed_value" style="width: 100px;">bb</span>
+                <br>
+                    (speed = min + rand(0,1)²/2·(μ-min) </span> to  seconds)
+            </p>
+        </div>
+
+  </section>
+  <script src="sketch.js"></script>
+  </main>
 </html>
